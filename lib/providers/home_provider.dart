@@ -2,7 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:provider_example/models/product.dart';
 
 class HomeProvider extends ChangeNotifier {
-  var favoriteList = [];
+  List<Product> favoriteList = [];
 
   void addToFavorite(Product product) {
     if (!favoriteList.contains(product)) {
@@ -10,6 +10,11 @@ class HomeProvider extends ChangeNotifier {
     } else {
       favoriteList.remove(product);
     }
+    notifyListeners();
+  }
+
+  void removeFromFavorite(Product product) {
+    favoriteList.remove(product);
     notifyListeners();
   }
 }

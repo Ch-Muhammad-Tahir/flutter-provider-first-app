@@ -10,7 +10,7 @@ void main() {
       ChangeNotifierProvider<CountProvier>(create: (context) => CountProvier()),
       ChangeNotifierProvider<HomeProvider>(create: (context) => HomeProvider()),
     ],
-    child: MaterialApp(
+    child: const MaterialApp(
       home: MyHomePageScreenWidget(),
     ),
   ));
